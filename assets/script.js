@@ -36,6 +36,13 @@ function searchWeather(searchValue) {
 
 var todaysDate = moment().format('MMM. Do, YYYY');
 
+$.ajax({
+    type: "GET",
+    url: `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=d396f1b911e6af6d4db7e43392f16b15&units=imperial`,
+    dataType: "json",
+}).then(function(data) {
+    console.log(data)
+})
 // });
 
 // make a function to get the forecast (it is a different URL)
