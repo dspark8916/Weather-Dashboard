@@ -1,6 +1,6 @@
 // $(document).ready(function(){
 
-$("#search-button").on("click", function() {
+$("#search-button").on("click", function () {
     var searchValue = $("#search-value").val();
 
     $("#search-value").val("");
@@ -13,7 +13,7 @@ function searchWeather(searchValue) {
         type: "GET",
         url: `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=d396f1b911e6af6d4db7e43392f16b15&units=imperial`,
         dataType: "json",
-    }).then(function(data) {
+    }).then(function (data) {
         console.log(data)
         // Create a history link for the search (Look up .push()) (this is used to set items to local storage)
 
@@ -36,13 +36,16 @@ function searchWeather(searchValue) {
 
 var todaysDate = moment().format('MMM. Do, YYYY');
 
-$.ajax({
-    type: "GET",
-    url: `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=d396f1b911e6af6d4db7e43392f16b15&units=imperial`,
-    dataType: "json",
-}).then(function(data) {
-    console.log(data)
-})
+function fiveDay(searchValue) {
+    $.ajax({
+        type: "GET",
+        url: `api.openweathermap.org/data/2.5/forecast?q=${searchValue}&appid=d396f1b911e6af6d4db7e43392f16b15`,
+        dataType: "json",
+    }).then(function (data) {
+        console.log(data)
+    })
+}
+
 // });
 
 // make a function to get the forecast (it is a different URL)
