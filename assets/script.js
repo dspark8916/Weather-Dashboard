@@ -20,11 +20,11 @@ function searchWeather(searchValue) {
         $("#today").empty()
 
         //creating a card for appending weather data
-        var title = $("<h3>").addClass("card-title").text(data.name);
+        var title = $("<h3>").addClass("card-title").text(data.name + " " + "(" + todaysDate + ")");
         var card = $("<div>").addClass("card");
-        var wind = $("<p>").addClass("card-text").text("Wind Speed: " + data.wind.speed);
-        var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity);
-        var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp);
+        var wind = $("<p>").addClass("card-text").text("Wind Speed: " + data.wind.speed + " MPH");
+        var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + "%");
+        var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " °F");
         var cardBody = $("<div>").addClass("card-body");
 
         cardBody.append(title, temp, humid, wind);
@@ -33,6 +33,8 @@ function searchWeather(searchValue) {
 
     })
 }
+
+var todaysDate = moment().format('MMM. Do, YYYY');
 
 // });
 
