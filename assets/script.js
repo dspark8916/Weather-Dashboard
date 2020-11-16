@@ -24,9 +24,10 @@ function searchWeather(searchValue) {
         var card = $("<div>").addClass("card");
         var wind = $("<p>").addClass("card-text").text("Wind Speed: " + data.wind.speed);
         var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity);
+        var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp);
         var cardBody = $("<div>").addClass("card-body");
 
-        cardBody.append(title, wind, humid);
+        cardBody.append(title, temp, humid, wind);
         card.append(cardBody);
         $("#today").append(card);
 
