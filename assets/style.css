@@ -1,0 +1,17 @@
+body {
+    background: skyblue;
+}
+
+.card-body {
+    background-color: steelblue;
+    color: white;
+}
+
+.header {
+    background-color: steelblue;
+}
+
+.fiveDayTitle {
+    color: white;
+}
+    

@@ -51,11 +51,11 @@ function fiveDay(searchValue) {
         var fiveCast = $("<h3>").addClass("fiveDayTitle").text("5-Day Forecast: ")
         $("#oneWeek").append(fiveCast);
         for (i = 0; i < 40; i = i + 8) {
-            var title = $("<h3>").addClass("card-title").text("Date");
-            var card = $("<div>").addClass("card");
-            var temp = $("<p>").addClass("card-text").text("Temperature: " + data.list[i].main.temp + " \u00B0F");
-            var humid = $("<p>").addClass("card-text").text("Humidity: " + data.list[i].main.humidity + "%");
-            var cardBody = $("<div>").addClass("card-body");
+            var title = $("<h3>").addClass("card-title title5").text("Month Day, Year");
+            var card = $("<div>").addClass("card card5");
+            var temp = $("<p>").addClass("card-text text5").text("Temperature: " + data.list[i].main.temp + " \u00B0F");
+            var humid = $("<p>").addClass("card-text text5").text("Humidity: " + data.list[i].main.humidity + "%");
+            var cardBody = $("<div>").addClass("card-body body5");
 
             cardBody.append(title, temp, humid);
             card.append(cardBody);
