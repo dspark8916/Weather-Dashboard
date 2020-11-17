@@ -26,9 +26,10 @@ function searchWeather(searchValue) {
         var wind = $("<p>").addClass("card-text").text("Wind Speed: " + data.wind.speed + " MPH");
         var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + "%");
         var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " \u00B0F");
+        var icon = (`<img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png">`)
         var cardBody = $("<div>").addClass("card-body");
 
-        cardBody.append(title, temp, humid, wind);
+        cardBody.append(title, icon, temp, humid, wind);
         card.append(cardBody);
         $("#today").append(card);
 
@@ -55,9 +56,10 @@ function fiveDay(searchValue) {
             var card = $("<div>").addClass("card card5");
             var temp = $("<p>").addClass("card-text text5").text("Temperature: " + data.list[i].main.temp + " \u00B0F");
             var humid = $("<p>").addClass("card-text text5").text("Humidity: " + data.list[i].main.humidity + "%");
+            var icon = (`<img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png">`);
             var cardBody = $("<div>").addClass("card-body body5");
 
-            cardBody.append(title, temp, humid);
+            cardBody.append(title, icon, temp, humid);
             card.append(cardBody);
             $("#oneWeek").append(card);
         }
