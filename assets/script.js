@@ -5,6 +5,7 @@ $("#search-button").on("click", function () {
 
     $("#search-value").val("");
 
+    fiveDay(searchValue)
     searchWeather(searchValue)
 });
 
@@ -24,7 +25,7 @@ function searchWeather(searchValue) {
         var card = $("<div>").addClass("card");
         var wind = $("<p>").addClass("card-text").text("Wind Speed: " + data.wind.speed + " MPH");
         var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + "%");
-        var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " °F");
+        var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " \u00B0F");
         var cardBody = $("<div>").addClass("card-body");
 
         cardBody.append(title, temp, humid, wind);
@@ -39,11 +40,28 @@ var todaysDate = moment().format('MMM. Do, YYYY');
 function fiveDay(searchValue) {
     $.ajax({
         type: "GET",
-        url: `api.openweathermap.org/data/2.5/forecast?q=${searchValue}&appid=d396f1b911e6af6d4db7e43392f16b15`,
+        url: `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&appid=d396f1b911e6af6d4db7e43392f16b15&units=imperial`,
         dataType: "json",
-    }).then(function (data) {
-        console.log(data)
     })
+    .then(function (data) {
+        console.log(data)
+    
+        $("#oneWeek").empty()
+
+        var fiveCast = $("<h3>").addClass("fiveDayTitle").text("5-Day Forecast: ")
+        $("#oneWeek").append(fiveCast);
+        for (i = 0; i < 40; i = i + 8) {
+            var title = $("<h3>").addClass("card-title").text("Date");
+            var card = $("<div>").addClass("card");
+            var temp = $("<p>").addClass("card-text").text("Temperature: " + data.list[i].main.temp + " \u00B0F");
+            var humid = $("<p>").addClass("card-text").text("Humidity: " + data.list[i].main.humidity + "%");
+            var cardBody = $("<div>").addClass("card-body");
+
+            cardBody.append(title, temp, humid);
+            card.append(cardBody);
+            $("#oneWeek").append(card);
+        }
+    });
 }
 
 // });
