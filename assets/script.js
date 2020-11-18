@@ -101,6 +101,12 @@ function renderSearchHistory() {
     }
 }
 
+renderSearchHistory();
+if (searchHistory.length > 0) {
+    searchWeather(searchHistory[searchHistory.length - 1]);
+    fiveDay(searchHistory[searchHistory.length - 1]);
+}
+
 // });
 
 // make a function to get the forecast (it is a different URL)
