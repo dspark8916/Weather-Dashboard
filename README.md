@@ -16,23 +16,23 @@ SO THAT I can plan a trip accordingly
 
 ## Tasks Completed
 
-    1.
+    1. Created index.html, script.js, and style.css files.
 
-    2.
+    2. Created input form for user to be able to type in city name they wish to search.
 
-    3.
+    3. Created function for weather for city searched to be displayed on webpage with dynamically created elements.
 
-    4.
+    4. Used OpenWeather API in order to get Daily Forecast, 5 Day Forecast, UV Index, & Icon Represenation of Weather Conditions.
 
-    5.
+    5. Created separate function for 5 Day Weather Forecast to be displayed. 
 
-    6.
+    6. Created separate function for UV Index to be displayed.
 
-    7.
+    7. Created function for dates to be displayed.
 
-    8.
+    8. Created function to save city search history to local storage and for user to get weather for previously searched cities by clicking on them. 
 
-    9.
+    9. Created if statement to show the last searched city forecast when user reopens the weather dashboard. 
 
 ## Link to Deployed Application & ScreenShots of Completed Application
 
@@ -41,9 +41,9 @@ SO THAT I can plan a trip accordingly
 
 **ScreenShots**
     
-    ![Weather Dashboard On Load]()
+![Weather Dashboard On Load](assets/images/dash1.png)
 
-    ![]()
+![]()
 
-    ![]()
+![]()
 
