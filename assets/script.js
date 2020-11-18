@@ -53,7 +53,6 @@ function fiveDay(searchValue) {
         var fiveCast = $("<h3>").addClass("fiveDayTitle").text("5-Day Forecast: ")
         $(".fourHead").append(fiveCast);
         for (i = 0; i < 40; i = i + 8) {
-            var title = $("<h3>").addClass("card-title title5").text(forecastDate);
             var card = $("<div>").addClass("card ml-3 mb-3 card5");
             var temp = $("<p>").addClass("card-text text5").text("Temperature: " + data.list[i].main.temp + " \u00B0F");
             var humid = $("<p>").addClass("card-text text5").text("Humidity: " + data.list[i].main.humidity + "%");
@@ -61,12 +60,12 @@ function fiveDay(searchValue) {
             var cardBody = $("<div>").addClass("card-body body5");
 
             let currentDate = new Date(data.list[i].dt_txt);
-            let day = currentDate.getDate() + 1;
+            let day = currentDate.getDate();
             let month = currentDate.getMonth() + 1;
             let year = currentDate.getFullYear();
-            var forecastDate = month + "/" + day + "/" + year;
+            var forecastDate = $("<h3>").addClass("card-title title 5").text(month + "/" + day + "/" + year);
 
-            cardBody.append(title, icon, temp, humid);
+            cardBody.append(forecastDate, icon, temp, humid);
             card.append(cardBody);
             $("#oneWeek").append(card);
         }
