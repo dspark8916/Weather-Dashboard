@@ -5,6 +5,8 @@ body {
 .card-body {
     background-color: steelblue;
     color: white;
+    border-radius: 5px;
+    border-color: steelblue;
 }
 
 .header {
@@ -17,10 +19,10 @@ body {
 
 .fourHead {
     margin-top: 25px;
-    margin-left: 500px;
+    margin-left: 525px;
 }
 
 #oneWeek {
     margin-top: 25px;
-    margin-left: 475px;
+    margin-left: 450px;
 }

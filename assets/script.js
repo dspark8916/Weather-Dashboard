@@ -49,13 +49,14 @@ function fiveDay(searchValue) {
     .then(function (data) {
         console.log(data)
     
+        $(".fiveDayTitle").empty()
         $("#oneWeek").empty()
 
         var fiveCast = $("<h3>").addClass("fiveDayTitle").text("5-Day Forecast: ")
         $(".fourHead").append(fiveCast);
         for (i = 0; i < 40; i = i + 8) {
             var title = $("<h3>").addClass("card-title title5").text("Month Day, Year");
-            var card = $("<div>").addClass("card card5");
+            var card = $("<div>").addClass("card ml-3 mb-3 card5");
             var temp = $("<p>").addClass("card-text text5").text("Temperature: " + data.list[i].main.temp + " \u00B0F");
             var humid = $("<p>").addClass("card-text text5").text("Humidity: " + data.list[i].main.humidity + "%");
             var icon = (`<img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png">`);
