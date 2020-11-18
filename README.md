@@ -40,6 +40,7 @@ SO THAT I can plan a trip accordingly
 [Weather Dashboard](https://dspark8916.github.io/Weather-Dashboard/)
 
 **ScreenShots**
+    
     ![]()
 
     ![]()

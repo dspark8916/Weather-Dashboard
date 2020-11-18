@@ -52,7 +52,7 @@ function fiveDay(searchValue) {
         $("#oneWeek").empty()
 
         var fiveCast = $("<h3>").addClass("fiveDayTitle").text("5-Day Forecast: ")
-        $("#oneWeek").append(fiveCast);
+        $(".fourHead").append(fiveCast);
         for (i = 0; i < 40; i = i + 8) {
             var title = $("<h3>").addClass("card-title title5").text("Month Day, Year");
             var card = $("<div>").addClass("card card5");
