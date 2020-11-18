@@ -38,8 +38,6 @@ function searchWeather(searchValue) {
 
 var todaysDate = moment().format('MMM. Do, YYYY');
 
-const date = new Date()
-
 function fiveDay(searchValue) {
     $.ajax({
         type: "GET",
@@ -55,12 +53,18 @@ function fiveDay(searchValue) {
         var fiveCast = $("<h3>").addClass("fiveDayTitle").text("5-Day Forecast: ")
         $(".fourHead").append(fiveCast);
         for (i = 0; i < 40; i = i + 8) {
-            var title = $("<h3>").addClass("card-title title5").text("Month Day, Year");
+            var title = $("<h3>").addClass("card-title title5").text(forecastDate);
             var card = $("<div>").addClass("card ml-3 mb-3 card5");
             var temp = $("<p>").addClass("card-text text5").text("Temperature: " + data.list[i].main.temp + " \u00B0F");
             var humid = $("<p>").addClass("card-text text5").text("Humidity: " + data.list[i].main.humidity + "%");
             var icon = (`<img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png">`);
             var cardBody = $("<div>").addClass("card-body body5");
+
+            let currentDate = new Date(data.list[i].dt_txt);
+            let day = currentDate.getDate() + 1;
+            let month = currentDate.getMonth() + 1;
+            let year = currentDate.getFullYear();
+            var forecastDate = month + "/" + day + "/" + year;
 
             cardBody.append(title, icon, temp, humid);
             card.append(cardBody);
