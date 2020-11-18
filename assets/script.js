@@ -91,7 +91,7 @@ function renderSearchHistory() {
 
         searchedCity.setAttribute("type", "text");
         searchedCity.setAttribute("readonly", true);
-        searchedCity.setAttribute("class", "form-control d-block bg-success");
+        searchedCity.setAttribute("class", "form-control d-block bg-primary text-white");
         searchedCity.setAttribute("value", searchHistory[i]);
         searchedCity.addEventListener("click", function() {
             searchWeather(searchedCity.value);

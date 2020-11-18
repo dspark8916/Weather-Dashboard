@@ -19,10 +19,14 @@ body {
 
 .fourHead {
     margin-top: 25px;
-    margin-left: 525px;
+    margin-left: 575px;
 }
 
 #oneWeek {
     margin-top: 25px;
-    margin-left: 175px;
+    margin-left: 275px;
+}
+
+#cityList {
+    padding-right: 250px;
 }
