@@ -7,6 +7,16 @@ $("#search-button").on("click", function () {
 
     fiveDay(searchValue)
     searchWeather(searchValue)
+    searchHistory.push(searchValue);
+    localStorage.setItem("search", JSON.stringify(searchHistory));
+    renderSearchHistory();
+});
+
+let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
+
+$("#clear-button").on("click", function () {
+    searchHistory = [];
+    renderSearchHistory();
 });
 
 function searchWeather(searchValue) {
@@ -70,6 +80,25 @@ function fiveDay(searchValue) {
             $("#oneWeek").append(card);
         }
     });
+}
+
+function renderSearchHistory() {
+    var cityList = document.getElementById("cityList");
+    cityList.innerHTML = "";
+
+    for (let i = 0; i < searchHistory.length; i++) {
+        const searchedCity = document.createElement("input");
+
+        searchedCity.setAttribute("type", "text");
+        searchedCity.setAttribute("readonly", true);
+        searchedCity.setAttribute("class", "form-control d-block bg-success");
+        searchedCity.setAttribute("value", searchHistory[i]);
+        searchedCity.addEventListener("click", function() {
+            searchWeather(searchedCity.value);
+            fiveDay(searchedCity.value);
+        })
+        cityList.append(searchedCity);
+    }
 }
 
 // });
