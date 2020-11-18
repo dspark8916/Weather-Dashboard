@@ -38,6 +38,8 @@ function searchWeather(searchValue) {
 
 var todaysDate = moment().format('MMM. Do, YYYY');
 
+const date = new Date()
+
 function fiveDay(searchValue) {
     $.ajax({
         type: "GET",
