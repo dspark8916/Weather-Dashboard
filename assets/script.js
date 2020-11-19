@@ -52,9 +52,15 @@ function uvIndex(lat, lon) {
         dataType: "json",
     }).then(function (data){
         console.log(data)
-
-        var uv = $("<p>").text("UV Index: " + data.value);
-        $("#today .card-body").append(uv);
+        
+        if (data.value <= 2) {
+            var fav = $("<span>").addClass("badge badge-pill badge-success").text("UV Index: " + data.value);
+        } else if (data.value >= 3 || data.value <= 5) {
+            var mod = $("<span>").addClass("badge badge-pill badge-warning").text("UV Index: " + data.value);
+        } else if (data.value > 5) {
+            var sev = $("<span>").addClass("badge badge-pill badge-danger").text("UV Index: " + data.value);
+        }
+        $("#today .card-body").append(fav, mod, sev);
     })
 }
 
