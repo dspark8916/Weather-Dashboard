@@ -43,7 +43,5 @@ SO THAT I can plan a trip accordingly
     
 ![Weather Dashboard On Load](assets/images/dash1.png)
 
-![]()
-
-![]()
+![Weather Dashboard With Search](assets/images/dash2.png)
 
