@@ -26,7 +26,6 @@ function searchWeather(searchValue) {
         dataType: "json",
     }).then(function (data) {
         console.log(data)
-        // Create a history link for the search (Look up .push()) (this is used to set items to local storage)
 
         $("#today").empty()
 
@@ -42,9 +41,20 @@ function searchWeather(searchValue) {
         cardBody.append(title, icon, temp, humid, wind);
         card.append(cardBody);
         $("#today").append(card);
-
     })
 }
+
+// function uvIndex(lat, lon) {
+//     $.ajax({
+//         type: "GET",
+//         url: 'http://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + lon + '&appid=d396f1b911e6af6d4db7e43392f16b15',
+//         dataType: "json",
+//     }).then(function (data){
+//         console.log(data)
+
+//         $("#today").empty()
+//     })
+// }
 
 var todaysDate = moment().format('MMM. Do, YYYY');
 
