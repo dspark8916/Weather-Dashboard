@@ -41,20 +41,22 @@ function searchWeather(searchValue) {
         cardBody.append(title, icon, temp, humid, wind);
         card.append(cardBody);
         $("#today").append(card);
+        uvIndex(data.coord.lat, data.coord.lon);
     })
 }
 
-// function uvIndex(lat, lon) {
-//     $.ajax({
-//         type: "GET",
-//         url: 'http://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + lon + '&appid=d396f1b911e6af6d4db7e43392f16b15',
-//         dataType: "json",
-//     }).then(function (data){
-//         console.log(data)
+function uvIndex(lat, lon) {
+    $.ajax({
+        type: "GET",
+        url: 'http://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + lon + '&appid=d396f1b911e6af6d4db7e43392f16b15&units=imperial',
+        dataType: "json",
+    }).then(function (data){
+        console.log(data)
 
-//         $("#today").empty()
-//     })
-// }
+        var uv = $("<p>").text("UV Index: " + data.value);
+        $("#today .card-body").append(uv);
+    })
+}
 
 var todaysDate = moment().format('MMM. Do, YYYY');
 
