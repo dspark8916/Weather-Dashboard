@@ -30,3 +30,8 @@ body {
 #cityList {
     padding-right: 210px;
 }
+
+.badge {
+    font-size: 15px;
+    color: white;
+}
