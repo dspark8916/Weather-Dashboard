@@ -35,7 +35,7 @@ function searchWeather(searchValue) {
         var wind = $("<p>").addClass("card-text").text("Wind Speed: " + data.wind.speed + " MPH");
         var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + "%");
         var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " \u00B0F");
-        var icon = (`<img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png">`)
+        var icon = (`<img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png">`)
         var cardBody = $("<div>").addClass("card-body");
 
         cardBody.append(title, icon, temp, humid, wind);
@@ -48,7 +48,7 @@ function searchWeather(searchValue) {
 function uvIndex(lat, lon) {
     $.ajax({
         type: "GET",
-        url: 'http://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + lon + '&appid=d396f1b911e6af6d4db7e43392f16b15&units=imperial',
+        url: 'https://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + lon + '&appid=d396f1b911e6af6d4db7e43392f16b15&units=imperial',
         dataType: "json",
     }).then(function (data){
         console.log(data)
@@ -84,7 +84,7 @@ function fiveDay(searchValue) {
             var card = $("<div>").addClass("card ml-3 mb-3 card5");
             var temp = $("<p>").addClass("card-text text5").text("Temperature: " + data.list[i].main.temp + " \u00B0F");
             var humid = $("<p>").addClass("card-text text5").text("Humidity: " + data.list[i].main.humidity + "%");
-            var icon = (`<img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png">`);
+            var icon = (`<img src="https://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png">`);
             var cardBody = $("<div>").addClass("card-body body5");
 
             let currentDate = new Date(data.list[i].dt_txt);
